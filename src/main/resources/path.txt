@@ -1,0 +1,10 @@
+[]->
+[]->
+[]->
+[]->
+[]->
+[]->
+[]->
+
+[X]-> Spring MVC,JPA,Boot Kurulum
+[X]-> Postgresql connection
