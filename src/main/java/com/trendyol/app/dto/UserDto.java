@@ -1,38 +1,23 @@
-package com.trendyol.app.entity;
-
-import lombok.*;
-
-import javax.persistence.*;
-import java.io.Serializable;
+package com.trendyol.app.dto;
 
 
-@Entity
-@Table(name="users")
-public class User implements Serializable {
-    @Id
-    @Column(nullable = false, unique = true)
-    @GeneratedValue(strategy=GenerationType.AUTO)
+
+public class UserDto {
+
     private Long user_id;
 
-    @Column(nullable = false,unique =true)
     private String email;
 
-    @Column(nullable = false,unique = true)
     private String name;
 
-    @Column(nullable = false,unique = false)
     private String password;
-
-
-
-    //detay ekle
-
-
-    public User() {
-    }
 
     public Long getUser_id() {
         return user_id;
+    }
+
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     public String getEmail() {
@@ -59,7 +44,13 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public void setUser_id(Long user_id) {
+    public UserDto(Long user_id, String email, String name, String password) {
         this.user_id = user_id;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+    }
+
+    public UserDto() {
     }
 }
