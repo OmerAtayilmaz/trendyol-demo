@@ -10,12 +10,10 @@ import com.trendyol.app.validations.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResponseErrorHandler;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 @Controller
@@ -32,6 +30,23 @@ public class UserController {
         return ResponseEntity.ok(userDto);
     }
 
+    @GetMapping("/user")
+    public ResponseEntity<ArrayList<UserDto>> allUsers(){
+       return ResponseEntity.ok(userService.getAllUsers());
+    }
+
+    @GetMapping("user/{id}")
+    public ResponseEntity<UserDto> findUserById(@PathVariable Long id){
+        return ResponseEntity.ok(userService.findById(id));
+    }
+
+    @PostMapping("user/{id}")
+    public ResponseEntity<UserDto> updateUser(
+            @PathVariable Long id,
+            @RequestBody UserDto updateUser
+    ){
+        return ResponseEntity.ok(userService.update(id,updateUser));
+    }
 //    @PostMapping
 //    public ResponseEntity<Create>
 

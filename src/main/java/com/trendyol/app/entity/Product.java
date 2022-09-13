@@ -6,15 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-enum Gender{
-    MAN(1),
-    WOMAN(2),
-    NOT_SPECIFIED(3);
 
-    Gender(int i) {
-
-    }
-}
 
 @Entity
 @Table(name="products")
@@ -37,7 +29,7 @@ public class Product {
     private String keywords;
 
     @Column(nullable = true,unique = false)
-    private Gender description;
+    private String description;
 
     @Column(length=150,nullable = false,unique=true)
     private String image;
