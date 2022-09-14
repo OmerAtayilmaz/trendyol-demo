@@ -18,6 +18,7 @@ import java.util.Objects;
 
 @Controller
 @RequestMapping("/api/v1/")
+@RestController
 public class UserController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class UserController {
 
 
     @PostMapping("/user")
-    public ResponseEntity<UserDto> helloWorld(@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
         userService.save(userDto);
         return ResponseEntity.ok(userDto);
     }
