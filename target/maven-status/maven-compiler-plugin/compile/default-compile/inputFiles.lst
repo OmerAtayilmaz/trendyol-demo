@@ -12,6 +12,7 @@
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/AppApplication.java
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/entity/Enums.java
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/entity/SocialMedia.java
+/home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/request/LoginRequest.java
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/validations/Validate.java
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/dao/impl/UserDaoImpl.java
 /home/enoca-team/Desktop/trendyol-demo/src/main/java/com/trendyol/app/controller/ProductController.java

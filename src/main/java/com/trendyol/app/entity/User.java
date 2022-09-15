@@ -10,8 +10,8 @@ import java.io.Serializable;
 @Table(name="users")
 public class User implements Serializable {
     @Id
-    @Column(nullable = false, unique = true)
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     private Long user_id;
 
     @Column(nullable = false,unique =true)

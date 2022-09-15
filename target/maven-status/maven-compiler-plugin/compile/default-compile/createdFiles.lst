@@ -1,6 +1,7 @@
 com/trendyol/app/dao/UserDao.class
 com/trendyol/app/AppApplication.class
 com/trendyol/app/controller/SettingController.class
+com/trendyol/app/request/LoginRequest.class
 com/trendyol/app/exceptions/ApiErrors.class
 com/trendyol/app/controller/UserController.class
 com/trendyol/app/validations/Validate.class
