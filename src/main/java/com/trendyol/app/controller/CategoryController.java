@@ -1,7 +1,7 @@
 package com.trendyol.app.controller;
 
 
-import com.trendyol.app.Category.services.CategoryService;
+import com.trendyol.app.category.services.CategoryService;
 import com.trendyol.app.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

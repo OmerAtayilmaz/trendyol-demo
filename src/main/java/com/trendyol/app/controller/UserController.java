@@ -2,7 +2,7 @@ package com.trendyol.app.controller;
 
 import com.trendyol.app.dto.UserDto;
 import com.trendyol.app.repositories.UserRepository;
-import com.trendyol.app.User.services.UserService;
+import com.trendyol.app.user.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

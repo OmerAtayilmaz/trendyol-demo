@@ -1,9 +1,12 @@
-[]->
-[]->
-[]->
-[]->
-[]->
-[]->
+## PROJECT && LEARING
+
+[]-> CRUD User
+[]-> CRUD Category [has many product]
+[]-> CRUD Product  [Belongs to one category]
+[]-> CRUD Slider
+[]-> CRUD Settings
+[]-> Json Web Token Authorization
+[]-> Jackson Apı nedir?
 []->
 
 [X]-> Spring MVC,JPA,Boot Kurulum
