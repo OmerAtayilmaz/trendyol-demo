@@ -33,16 +33,11 @@ public class Product implements Serializable {
     // Relations
     // product-category, product-user, product-comment, product-images
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "category_category_id", nullable = false)
-    private Category category;
-
     public Product() {
     }
 
     public Product(Long product_id, String title, String keywords, String description,
-            String image, String type, boolean status, User user, Category category) {
-        this.category = category;
+            String image, String type, boolean status, User user) {
         this.product_id = product_id;
         this.title = title;
         this.keywords = keywords;
@@ -108,11 +103,4 @@ public class Product implements Serializable {
         this.status = status;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory_id(Category category) {
-        this.category = category;
-    }
 }

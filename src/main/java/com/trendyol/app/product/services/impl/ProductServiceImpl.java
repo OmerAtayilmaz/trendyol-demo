@@ -14,18 +14,13 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository=productRepository;
+        this.productRepository = productRepository;
     }
 
     @Override
     public void create(ProductDto productDto) {
-        Product p=new Product();
-        p.setCategory_id(productDto.getCategory_id());
-        p.setDescription(productDto.getDescription());
-        p.setImage(productDto.getImage());
-        p.setKeywords(productDto.getKeywords());
+        Product p = new Product();
         p.setStatus(productDto.isStatus());
-        p.setType(productDto.getType());
         p.setProduct_id(productDto.getProduct_id());
         productRepository.save(p);
     }

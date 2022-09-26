@@ -1,11 +1,15 @@
 package com.trendyol.app.entity;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "category")
 public class Category implements Serializable {
 
     @Id
@@ -18,17 +22,13 @@ public class Category implements Serializable {
     @Column
     private String categoryImage;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Product> productList;
-
     @Column(columnDefinition = "integer default 0")
     private Integer parent_id;
 
-    public Category(Long category_id, String categoryImage, String categoryTitle, Set<Product> productList,
+    public Category(Long category_id, String categoryImage, String categoryTitle,
             Integer parent_id) {
         this.category_id = category_id;
         this.parent_id = parent_id;
-        this.productList = productList;
         this.categoryImage = categoryImage;
         this.categoryTitle = categoryTitle;
     }
@@ -69,11 +69,4 @@ public class Category implements Serializable {
         this.parent_id = parent_id;
     }
 
-    public Set<Product> getProductList() {
-        return productList;
-    }
-
-    public void setProductList(Set<Product> productList) {
-        this.productList = productList;
-    }
 }
