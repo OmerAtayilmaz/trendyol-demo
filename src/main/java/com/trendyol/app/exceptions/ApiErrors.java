@@ -1,12 +1,5 @@
 package com.trendyol.app.exceptions;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
 public class ApiErrors {
 
     private String statusCode;

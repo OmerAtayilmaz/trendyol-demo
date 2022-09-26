@@ -1,11 +1,10 @@
 package com.trendyol.app.dto;
 
-import com.trendyol.app.entity.User;
+import com.trendyol.app.entity.Product;
 
-import javax.persistence.*;
+import java.util.Set;
 
 public class CategoryDto {
-
 
     private Long category_id;
 
@@ -13,16 +12,15 @@ public class CategoryDto {
 
     private String categoryImage;
 
-    private User created_by;
-
     private Integer parent_id;
 
+    private Set<Product> productList;
 
-    public CategoryDto(Long category_id, String categoryTitle, String categoryImage, User created_by, Integer parent_id) {
+    public CategoryDto(Long category_id, String categoryTitle, String categoryImage,
+            Integer parent_id) {
         this.category_id = category_id;
         this.categoryTitle = categoryTitle;
         this.categoryImage = categoryImage;
-        this.created_by = created_by;
         this.parent_id = parent_id;
     }
 
@@ -53,12 +51,19 @@ public class CategoryDto {
         this.categoryImage = categoryImage;
     }
 
-
     public Integer getParent_id() {
         return parent_id;
     }
 
     public void setParent_id(Integer parent_id) {
         this.parent_id = parent_id;
+    }
+
+    public Set<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(Set<Product> productList) {
+        this.productList = productList;
     }
 }

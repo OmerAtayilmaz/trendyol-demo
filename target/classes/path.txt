@@ -1,13 +1,60 @@
 ## PROJECT && LEARING
 
-[]-> CRUD User
+
 []-> CRUD Category [has many product]
 []-> CRUD Product  [Belongs to one category]
 []-> CRUD Slider
 []-> CRUD Settings
-[]-> Json Web Token Authorization
+[]-> Everything about JPA
+        ----SECURITY-----
+[]-> Json Web Token Authorization && Authentication
+[]-> OAuth2
+[]-> Form Auth
+[]-> Basic Auth
+        ----SECURITY----
 []-> Jackson Apı nedir?
-[]->
+[]-> HTTP - URL API
+[]-> Java Optionals
+[]-> Dependency Injection
+[]-> Garbage Collection
+[]-> Design Patterns
+[]-> How JVM Works
+[]-> JAVA Best practices
+[]-> Basics of threads
+[]-> Streams
+[]-> Functional Programming
+------
+[]-> Plain JDBC vs JDBI3 vs JDBC Template
+[]-> SQL Database Constrainsts
+[]-> SQL Transactions (ACID)
+[]-> SQL Indexes, JOINS (Oracle documentation), Database Administration
+------
+[]-> Build tools: Gradle, Maven, Ant
+[]-> Logging Framework: Log4j2
+[]-> Logging Framework: LogBack
+------
+[]-> DevOps: Docker
+[]-> DevOps: Kubernetes
+[]-> Devops Cloud: AWS
 
+
+[]-> Testing: Contract Testing
+[]-> Testing: Integration Testing
+[]-> Testing: Debbuging
+[]-> Testing: Unit Testing
+[]-> Testing: Mocking
+[]-> Testing: Assertion Library
+
+    MASTER OF SPRING
+[]-> Quarkus
+[]-> Play
+[]-> Spring Read Documentation
+[]-> Spring Testing
+[]-> Spring Microservices
+
+
+
+COMPLETED
 [X]-> Spring MVC,JPA,Boot Kurulum
 [X]-> Postgresql connection
+[X]-> CRUD User

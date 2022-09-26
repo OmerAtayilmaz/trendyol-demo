@@ -1,48 +1,27 @@
-package com.trendyol.app.entity;
+package com.trendyol.app.dto;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import com.trendyol.app.entity.Category;
 
-@Entity
-@Table(name = "products")
-public class Product implements Serializable {
+public class ProductDto {
 
-    @Id
-    @Column(nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long product_id;
 
-    @Column(length = 120, nullable = true, unique = false)
     private String title;
 
-    @Column(length = 120, nullable = true, unique = false)
     private String keywords;
 
-    @Column(nullable = true, unique = false)
     private String description;
 
-    @Column(length = 150, nullable = false, unique = true)
     private String image;
 
-    @Column(length = 35, nullable = false, unique = false)
     private String type; // used-new-newlike
 
-    @Column(nullable = false, unique = false)
     private boolean status;
 
-    // Relations
-    // product-category, product-user, product-comment, product-images
+    private Category category_id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "category_category_id", nullable = false)
-    private Category category;
-
-    public Product() {
-    }
-
-    public Product(Long product_id, String title, String keywords, String description,
-            String image, String type, boolean status, User user, Category category) {
-        this.category = category;
+    public ProductDto(Long product_id, String title, String keywords, String description, String image, String type,
+            boolean status, Category category_id) {
         this.product_id = product_id;
         this.title = title;
         this.keywords = keywords;
@@ -50,6 +29,8 @@ public class Product implements Serializable {
         this.image = image;
         this.type = type;
         this.status = status;
+
+        this.category_id = category_id;
     }
 
     public Long getProduct_id() {
@@ -108,11 +89,16 @@ public class Product implements Serializable {
         this.status = status;
     }
 
-    public Category getCategory() {
-        return category;
+    public Category getCategory_id() {
+        return category_id;
     }
 
-    public void setCategory_id(Category category) {
-        this.category = category;
+    public void setCategory_id(Category category_id) {
+        this.category_id = category_id;
     }
+
+    public ProductDto() {
+
+    }
+
 }

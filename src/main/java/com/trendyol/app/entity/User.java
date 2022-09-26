@@ -1,32 +1,26 @@
 package com.trendyol.app.entity;
 
-import lombok.*;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private Long user_id;
 
-    @Column(nullable = false,unique =true)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
-    @Column(nullable = false,unique = false)
+    @Column(nullable = false, unique = false)
     private String password;
 
-
-
-    //detay ekle
-
+    // detay ekle
 
     public User() {
     }

@@ -5,6 +5,7 @@ import com.trendyol.app.entity.User;
 import com.trendyol.app.repositories.UserRepository;
 import com.trendyol.app.user.services.UserService;
 import com.trendyol.app.utils.Utils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Objects;
 public class UserServiceImpl implements UserService {
 
 
+    @Autowired
     private final UserRepository userRepository;
 
     //final oldugu ıcın gerekıyor
