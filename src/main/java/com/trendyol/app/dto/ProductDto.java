@@ -10,10 +10,10 @@ public class ProductDto {
 
     private boolean status;
 
-    private Category category_id;
+    private Long category_id;
 
     public ProductDto(Long product_id, String title,
-            boolean status, Category category_id) {
+            boolean status, Long category_id) {
         this.product_id = product_id;
         this.title = title;
         this.status = status;
@@ -48,11 +48,11 @@ public class ProductDto {
         this.status = status;
     }
 
-    public Category getCategory_id() {
+    public Long getCategory_id() {
         return category_id;
     }
 
-    public void setCategory_id(Category category_id) {
+    public void setCategory_id(Long category_id) {
         this.category_id = category_id;
     }
 

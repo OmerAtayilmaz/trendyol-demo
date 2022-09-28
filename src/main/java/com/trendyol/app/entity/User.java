@@ -9,7 +9,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
-    private Long user_id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -25,8 +25,8 @@ public class User implements Serializable {
     public User() {
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getId() {
+        return id;
     }
 
     public String getEmail() {
@@ -53,7 +53,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 }

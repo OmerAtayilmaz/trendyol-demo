@@ -6,33 +6,31 @@ import java.util.Set;
 
 public class CategoryDto {
 
-    private Long category_id;
+    private Long id;
 
     private String categoryTitle;
 
     private String categoryImage;
 
-    private Integer parent_id;
 
     private Set<Product> productList;
 
-    public CategoryDto(Long category_id, String categoryTitle, String categoryImage,
-            Integer parent_id) {
-        this.category_id = category_id;
+    public CategoryDto(Long id, String categoryTitle, String categoryImage
+           ) {
+        this.id = id;
         this.categoryTitle = categoryTitle;
         this.categoryImage = categoryImage;
-        this.parent_id = parent_id;
     }
 
     public CategoryDto() {
     }
 
-    public Long getCategory_id() {
-        return category_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCategoryTitle() {
@@ -51,13 +49,6 @@ public class CategoryDto {
         this.categoryImage = categoryImage;
     }
 
-    public Integer getParent_id() {
-        return parent_id;
-    }
-
-    public void setParent_id(Integer parent_id) {
-        this.parent_id = parent_id;
-    }
 
     public Set<Product> getProductList() {
         return productList;

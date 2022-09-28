@@ -18,6 +18,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void createCategory(CategoryDto categoryDto) {
         Category categoryModel=new Category();
+        categoryModel.setId(categoryDto.getId());
         categoryModel.setCategoryImage(categoryDto.getCategoryImage());
         categoryModel.setCategoryTitle(categoryDto.getCategoryTitle());
         categoryRepository.save(categoryModel);
@@ -36,8 +37,8 @@ public class CategoryServiceImpl implements CategoryService {
             CategoryDto category=new CategoryDto();
             category.setCategoryTitle(item.getCategoryTitle());
             category.setCategoryImage(item.getCategoryImage());
-            category.setCategory_id(item.getCategory_id());
-            category.setParent_id(item.getParent_id());
+            category.setId(item.getId());
+            category.setProductList(item.getProductSet());
             categoryArrayList.add(category);
         });
         return categoryArrayList;
@@ -49,9 +50,10 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryDto categoryDto=new CategoryDto();
         if(category==null)return null;
 
-        categoryDto.setCategory_id(category.getCategory_id());
+        categoryDto.setId(category.getId());
         categoryDto.setCategoryImage(category.getCategoryImage());
         categoryDto.setCategoryTitle(category.getCategoryTitle());
+        categoryDto.setProductList(category.getProductSet());
         return categoryDto;
     }
 

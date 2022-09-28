@@ -2,10 +2,7 @@ package com.trendyol.app.entity;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,7 +11,7 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long category_id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String categoryTitle;
@@ -22,27 +19,26 @@ public class Category implements Serializable {
     @Column
     private String categoryImage;
 
-    @Column(columnDefinition = "integer default 0")
-    private Integer parent_id;
-
-    public Category(Long category_id, String categoryImage, String categoryTitle,
-            Integer parent_id) {
-        this.category_id = category_id;
-        this.parent_id = parent_id;
-        this.categoryImage = categoryImage;
-        this.categoryTitle = categoryTitle;
-    }
+    //@JsonIgnore
+    @OneToMany(mappedBy="category")
+    private Set<Product> productSet;
 
     public Category() {
-
     }
 
-    public Long getCategory_id() {
-        return category_id;
+    public Category(Long id,String categoryTitle,String categoryImage,Set<Product> productSet){
+        this.categoryTitle=categoryTitle;
+        this.categoryImage=categoryImage;
+        this.productSet=productSet;
+        this.id=id;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCategoryTitle() {
@@ -61,12 +57,11 @@ public class Category implements Serializable {
         this.categoryImage = categoryImage;
     }
 
-    public Integer getParent_id() {
-        return parent_id;
+    public Set<Product> getProductSet() {
+        return productSet;
     }
 
-    public void setParent_id(Integer parent_id) {
-        this.parent_id = parent_id;
+    public void setProductSet(Set<Product> productSet) {
+        this.productSet = productSet;
     }
-
 }

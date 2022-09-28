@@ -1,8 +1,8 @@
 ## PROJECT && LEARING
 
 
-[]-> CRUD Category [has many product]
-[]-> CRUD Product  [Belongs to one category]
+[COMPLETED]-> CRUD Category [has many product]
+[COMPLETED]-> CRUD Product  [Belongs to one category]
 []-> CRUD Slider
 []-> CRUD Settings
 []-> Everything about JPA

@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
             User user = new User();
             user.setName(userDto.getName());
-            user.setUser_id(userDto.getUser_id());
+            user.setId(userDto.getUser_id());
             user.setPassword(Utils.hashingPassword(userDto.getPassword()));
             user.setEmail(userDto.getEmail());
             userRepository.save(user);
@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
         ArrayList<UserDto> userDtoArrayList=new ArrayList<>();
         for (User u:userRepository.findAll()){
             UserDto userDto=new UserDto();
-            userDto.setUser_id(u.getUser_id());
+            userDto.setUser_id(u.getId());
             userDto.setPassword(u.getPassword());
             userDto.setName(u.getName());
             userDto.setEmail(u.getEmail());
@@ -89,7 +89,7 @@ public class UserServiceImpl implements UserService {
         userDto.setEmail(user.getEmail());
         userDto.setName(user.getName());
         userDto.setPassword(user.getPassword());
-        userDto.setUser_id(user.getUser_id());
+        userDto.setUser_id(user.getId());
         return userDto;
     }
 
@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
         ArrayList<UserDto> userDtoArrayList=new ArrayList<>();
         for (User u:userRepository.getUserListFromQuery()){
             UserDto userDto=new UserDto();
-            userDto.setUser_id(u.getUser_id());
+            userDto.setUser_id(u.getId());
             userDto.setPassword(u.getPassword());
             userDto.setName(u.getName());
             userDto.setEmail(u.getEmail());
