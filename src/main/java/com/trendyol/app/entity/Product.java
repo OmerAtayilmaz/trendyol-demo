@@ -10,8 +10,6 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
     @Id
-    @Column(nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(length = 120, nullable = true, unique = false)

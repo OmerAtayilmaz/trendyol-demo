@@ -4,7 +4,7 @@ import com.trendyol.app.entity.Category;
 
 public class ProductDto {
 
-    private Long product_id;
+    private Long id;
 
     private String title;
 
@@ -14,7 +14,7 @@ public class ProductDto {
 
     public ProductDto(Long product_id, String title,
             boolean status, Long category_id) {
-        this.product_id = product_id;
+        this.id = product_id;
         this.title = title;
         this.status = status;
         this.category_id = category_id;
@@ -24,12 +24,12 @@ public class ProductDto {
 
     }
 
-    public Long getProduct_id() {
-        return product_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setProduct_id(Long product_id) {
-        this.product_id = product_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
