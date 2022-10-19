@@ -1,2 +1,9 @@
-<p>category works!</p>
-{{title}}
+<section id="category">
+    <ul class="category__nav">
+        <li 
+            *ngFor="let category of categoryList"
+            class="list-group-item">
+            {{ category.categoryTitle }}
+        </li>
+    </ul>
+</section>

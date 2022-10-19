@@ -1,0 +1,13 @@
+#category{
+    background: rgb(97, 97, 255);
+    & .category__nav{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 75px;
+        & li {
+            list-style-type: none;
+            font-size:20px;
+        }
+    }
+}

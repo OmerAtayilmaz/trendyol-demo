@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-category',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+  categoryList:any;  
   title:string="Data Comes From TS!";
-  constructor() { }
+  constructor(private cService:CategoryService) { }
 
   /* bu component ilk acıldıgında calısacak fonksıyon */
   ngOnInit(): void {
-    this.setTitle();
+    this.cService.getCategories().subscribe(res=>{
+      this.categoryList=res;
+    });
   }
   setTitle(){
     this.title="HUH AWESOMEEEE!";
