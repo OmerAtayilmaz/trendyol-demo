@@ -8,15 +8,12 @@ public class ProductDto {
 
     private String title;
 
-    private boolean status;
 
     private Long category_id;
 
-    public ProductDto(Long product_id, String title,
-            boolean status, Long category_id) {
+    public ProductDto(Long product_id, String title, Long category_id) {
         this.id = product_id;
         this.title = title;
-        this.status = status;
         this.category_id = category_id;
     }
 
@@ -40,13 +37,6 @@ public class ProductDto {
         this.title = title;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 
     public Long getCategory_id() {
         return category_id;

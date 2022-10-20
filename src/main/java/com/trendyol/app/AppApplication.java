@@ -2,12 +2,14 @@ package com.trendyol.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Objects;
 
 @SpringBootApplication
+@CrossOrigin("*")
 public class AppApplication {
 
 	public static void main(String[] args) {
