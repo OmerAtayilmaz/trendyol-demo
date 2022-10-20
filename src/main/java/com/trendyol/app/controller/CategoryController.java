@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/v1/category")
+@CrossOrigin("*")
 public class CategoryController {
 
     @Autowired
