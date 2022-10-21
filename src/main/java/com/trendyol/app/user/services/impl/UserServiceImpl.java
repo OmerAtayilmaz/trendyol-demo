@@ -34,8 +34,9 @@ public class UserServiceImpl implements UserService {
 
             User user = new User();
             user.setName(userDto.getName());
-            user.setId(userDto.getUser_id());
+            user.setId(userDto.getId());
             user.setPassword(Utils.hashingPassword(userDto.getPassword()));
+            user.setStatus(userDto.getStatus());
             user.setEmail(userDto.getEmail());
             userRepository.save(user);
             return userDto;
@@ -44,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(Long id) {
-
+        userRepository.deleteById(id);
     }
 
     @Override
@@ -59,7 +60,8 @@ public class UserServiceImpl implements UserService {
             user.setPassword(Utils.hashingPassword(updatedUser.getPassword()));
         if(!Objects.isNull(updatedUser.getEmail())&&!updatedUser.getEmail().equals(""))
             user.setEmail(updatedUser.getEmail());
-
+        if(!Objects.isNull(updatedUser.getStatus())&&!updatedUser.getStatus().equals(""))
+            user.setStatus(user.getStatus());
         userRepository.save(user);
         return updatedUser;
     }
@@ -69,10 +71,11 @@ public class UserServiceImpl implements UserService {
         ArrayList<UserDto> userDtoArrayList=new ArrayList<>();
         for (User u:userRepository.findAll()){
             UserDto userDto=new UserDto();
-            userDto.setUser_id(u.getId());
+            userDto.setId(u.getId());
             userDto.setPassword(u.getPassword());
             userDto.setName(u.getName());
             userDto.setEmail(u.getEmail());
+            userDto.setStatus(u.getStatus());
             userDtoArrayList.add(userDto);
         }
         return userDtoArrayList;
@@ -89,7 +92,8 @@ public class UserServiceImpl implements UserService {
         userDto.setEmail(user.getEmail());
         userDto.setName(user.getName());
         userDto.setPassword(user.getPassword());
-        userDto.setUser_id(user.getId());
+        userDto.setStatus(user.getStatus());
+        userDto.setId(user.getId());
         return userDto;
     }
 
@@ -98,10 +102,11 @@ public class UserServiceImpl implements UserService {
         ArrayList<UserDto> userDtoArrayList=new ArrayList<>();
         for (User u:userRepository.getUserListFromQuery()){
             UserDto userDto=new UserDto();
-            userDto.setUser_id(u.getId());
+            userDto.setId(u.getId());
             userDto.setPassword(u.getPassword());
             userDto.setName(u.getName());
             userDto.setEmail(u.getEmail());
+            userDto.setStatus(u.getStatus());
             userDtoArrayList.add(userDto);
         }
         return userDtoArrayList;

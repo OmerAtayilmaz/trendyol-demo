@@ -85,4 +85,22 @@ public class ProductServiceImpl implements ProductService {
         });
         return productDtoList;
     }
+
+    @Override
+    public void delete(Long id) {
+         productRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ProductDto> sortProductsByTitle() {
+        List<ProductDto> productDtoList=new java.util.ArrayList();
+        productRepository.findProductsByOrderByTitleDesc().forEach(item->{
+            ProductDto p=new ProductDto();
+            p.setCategory_id(item.getCategory().getId());
+            p.setId(item.getId());
+            p.setTitle(item.getTitle());
+            productDtoList.add(p);
+        });
+        return productDtoList;
+    }
 }

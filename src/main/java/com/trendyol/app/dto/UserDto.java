@@ -4,20 +4,21 @@ package com.trendyol.app.dto;
 
 public class UserDto {
 
-    private Long user_id;
+    private Long id;
 
     private String email;
 
     private String name;
 
     private String password;
+    private String status;
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -44,13 +45,21 @@ public class UserDto {
         this.password = password;
     }
 
-    public UserDto(Long user_id, String email, String name, String password) {
-        this.user_id = user_id;
+    public UserDto(Long id, String email, String name, String password) {
+        this.id = id;
         this.email = email;
         this.name = name;
         this.password = password;
     }
 
     public UserDto() {
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
