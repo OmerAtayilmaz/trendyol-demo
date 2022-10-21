@@ -1,0 +1,27 @@
+#user{
+    & .container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        & li{
+            width: 300px;
+            height:300px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: rgb(97, 97, 255);;
+            border-radius: 50px;
+
+            & a {
+                border:none;
+                padding:8px 25px;
+                background:white;
+                border-radius: 9px;
+                cursor:pointer;
+            }
+        }
+    }
+}

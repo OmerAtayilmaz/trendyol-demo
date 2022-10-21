@@ -1,1 +1,8 @@
-<p>user works!</p>
+<div id="user">
+   <ul class="container">
+      <li *ngFor="let u of userList">
+         <h1>{{u.name}}</h1>
+         <a routerLink="{{u.id}}">Show Details</a>
+      </li>
+   </ul>
+</div>

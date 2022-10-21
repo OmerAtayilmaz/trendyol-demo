@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category/category.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserComponent } from './user/user.component';
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },{
     path:"user",
     component:UserComponent
+  },{
+    path:"user/:id",
+    component:UserDetailComponent
   }
 ];
 
