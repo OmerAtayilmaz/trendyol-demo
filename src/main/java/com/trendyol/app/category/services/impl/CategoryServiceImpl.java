@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -58,7 +59,49 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public CategoryDto delete(Long id) {
-        return null;
+    public void delete(Long id) {
+         categoryRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CategoryDto> getCategoryByName(String categoryName) {
+        List<CategoryDto> categoryDtoList=new ArrayList<>();
+        categoryRepository.getCategoriesByCategoryTitle(categoryName).forEach(item->{
+            CategoryDto c=new CategoryDto();
+            c.setCategoryImage(item.getCategoryImage());
+            c.setCategoryTitle(item.getCategoryTitle());
+            c.setId(item.getId());
+            c.setProductList(item.getProductSet());
+            categoryDtoList.add(c);
+        });
+        return categoryDtoList;
+    }
+
+    @Override
+    public List<CategoryDto> getAllSortedCategories() {
+        List<CategoryDto> categoryDtoList=new ArrayList<>();
+        categoryRepository.findCategoriesByOrderByIdDesc().forEach(item->{
+            CategoryDto c=new CategoryDto();
+            c.setCategoryImage(item.getCategoryImage());
+            c.setCategoryTitle(item.getCategoryTitle());
+            c.setId(item.getId());
+            c.setProductList(item.getProductSet());
+            categoryDtoList.add(c);
+        });
+        return categoryDtoList;
+    }
+
+    @Override
+    public List<CategoryDto> getAllCategoriesByProductSize(int size) {
+        List<CategoryDto> categoryDtoList=new ArrayList<>();
+        categoryRepository.getCategoryByCustomQuery(size).forEach(item->{
+            CategoryDto c=new CategoryDto();
+            c.setCategoryImage(item.getCategoryImage());
+            c.setCategoryTitle(item.getCategoryTitle());
+            c.setId(item.getId());
+            c.setProductList(item.getProductSet());
+            categoryDtoList.add(c);
+        });
+        return categoryDtoList;
     }
 }

@@ -9,6 +9,8 @@ import { ProductComponent } from './product/product.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import {ContentModule} from "./content/content.module";
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { UserComponent } from './user/user.component';
     ProductComponent,
     HeaderComponent,
     HomeComponent,
-    UserComponent/* auto tanımlandı after: ng g component Category */
+    UserComponent,
+    UserDetailComponent/* auto tanımlandı after: ng g component Category */
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ContentModule
   ],
   providers: [],
   bootstrap: [AppComponent]/* başlangıç component */

@@ -18,7 +18,8 @@ public class User implements Serializable {
     @Column(nullable = false, unique = false)
     private String password;
 
-    // detay ekle
+    @Column(nullable = true,unique = false)
+    private String status; //active-inactive-deleted
 
     public User() {
     }
@@ -53,5 +54,13 @@ public class User implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

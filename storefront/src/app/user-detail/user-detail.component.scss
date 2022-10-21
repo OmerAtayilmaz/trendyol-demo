@@ -1,0 +1,9 @@
+table{
+    width: 100vw;
+    background:rgb(247, 234, 234);
+    text-align: center;
+    & th{
+        background: blue;
+        color:white;
+    }
+}

@@ -9,7 +9,6 @@ import java.net.URL;
 import java.util.Objects;
 
 @SpringBootApplication
-@CrossOrigin("*")
 public class AppApplication {
 
 	public static void main(String[] args) {
