@@ -3,9 +3,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin:0;
+        padding:0;
         & li{
-            width: 300px;
+            width: 400px;
+            margin:5px 25px;
             height:300px;
             list-style: none;
             display: flex;

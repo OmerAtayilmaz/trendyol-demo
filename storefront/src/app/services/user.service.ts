@@ -7,7 +7,6 @@ import { URI } from 'src/environments/environment';
 export class UserService {
 
   private userList:string=URI+"user";
-  private userDetail:string=URI+"user";
 
   constructor(private httpClient:HttpClient) { }  
   getAllUsers(){
@@ -15,6 +14,6 @@ export class UserService {
   }
 
   getUserById(id:number){
-    return this.httpClient.get(`${this.userDetail}/`+id);
+    return this.httpClient.get(`${this.userList}/`+id);
   }
 }
