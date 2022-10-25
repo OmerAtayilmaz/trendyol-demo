@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import {ContentModule} from "./content/content.module";
 import { UserDetailComponent } from './user-detail/user-detail.component';
-
+import {NavbarComponent} from "./components/navbar/navbar.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     HeaderComponent,
     HomeComponent,
     UserComponent,
-    UserDetailComponent/* auto tanımlandı after: ng g component Category */
+    UserDetailComponent/* auto tanımlandı after: ng g component Category */,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
